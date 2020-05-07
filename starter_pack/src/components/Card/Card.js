@@ -4,10 +4,10 @@ import './Card.css';
 const Card = (props) => {
   return (
     <div className="card-container">
-      <img src={props.characters.image} alt="cartoons"/>
-      <h2>{props.characters.name}</h2>
-      <p>{props.characters.species}</p>
-      <p>{props.characters.gender}</p>
+      <img src={props.character.image} alt="rick n morty"/>
+      <h2>{props.character.name}</h2>
+      <p>{props.character.species}</p>
+      <p>{props.character.gender}</p>
     </div>
   );
 };

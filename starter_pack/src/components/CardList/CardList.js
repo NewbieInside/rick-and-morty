@@ -6,7 +6,7 @@ const CardList = (props) => {
   return (
     <div className="card-list">
       {props.characters.map((char) => {
-        return <Card key={char.id} characters={char} />;
+        return <Card key={char.id} character={char} />;
       })}
     </div>
   );
