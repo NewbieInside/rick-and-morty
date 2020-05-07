@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import CardList from './components/CardList/CardList';
+import Header from './components/Header/Header';
 
 class App extends Component {
   constructor() {
@@ -10,24 +11,24 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    const response = await fetch('https://rickandmortyapi.com/api/character/')
+    const response = await fetch('https://rickandmortyapi.com/api/character/');
     const data = await response.json();
     this.setState({
-      characters: data.results
-    })
+      characters: data.results,
+    });
   }
 
   render() {
     return (
-      <div className="App">
-        <CardList characters={this.state.characters} />
-      </div>
+      <Fragment>
+        <Header />
+        <CardList className="cardlist-container" characters={this.state.characters} />
+      </Fragment>
     );
   }
 }
 
 export default App;
-
 
 // async componentDidMount() {
 //   const response = await fetch('https://rickandmortyapi.com/api/character/');
